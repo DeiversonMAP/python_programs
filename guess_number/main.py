@@ -82,7 +82,7 @@ def guess() -> None:
     print(f"Um numero foi gerado automaticamente entre 1 e 100 ")
     verifica_numero(numero = number())
     time.sleep(0.5)
-    if input(f"Deseja jogar novamente? Digite 's' caso sim, qualquer outro valor caso não \n") in ('s','sim','S','SIM'):
+    if input(f"Deseja jogar novamente? Digite 's' caso sim, qualquer outro valor caso não \n").upper() in ('S','SIM','Y','YES'):
         time.sleep(0.5)
         print(f"{cyan('Reiniciando ...')}")
         time.sleep(1)
