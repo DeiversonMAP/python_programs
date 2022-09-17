@@ -72,7 +72,7 @@ def verifica_numero(numero: int, count: int = 1) -> None:
         verifica_numero(numero=numero, count=count+1)
     else :
         print(f"Número {red('maior')} que o esperado, chute novamente um {green('menor')}")
-        verifica_numero(numero=numero, count=count+1)
+        verifica_numero(numero=numero, count=count)
 
 
 def guess() -> None:
@@ -82,7 +82,7 @@ def guess() -> None:
     print(f"Um numero foi gerado automaticamente entre 1 e 100 ")
     verifica_numero(numero = number())
     time.sleep(0.5)
-    if input(f"Deseja jogar novamente? Digite 's' caso sim, qualquer outro valor caso não \n") == 's':
+    if input(f"Deseja jogar novamente? Digite 's' caso sim, qualquer outro valor caso não \n") in ('s','sim','S','SIM'):
         time.sleep(0.5)
         print(f"{cyan('Reiniciando ...')}")
         time.sleep(1)
@@ -97,6 +97,3 @@ def guess() -> None:
 
 if __name__ == '__main__':
     guess()
-    print(color.foobar())
-
-
