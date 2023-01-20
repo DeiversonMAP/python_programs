@@ -30,9 +30,21 @@ def check(word:str,letter: str)-> str and bool:
     if len(letter)== 0:
         return '' ,True  # type: ignore
     elif check_especial(word= word,letter=letter) or letter in word :
-        return f"\nA letra {letter} apareceu {word.count(letter)} vezes \n", True  # type: ignore #ARRUMAR O CONTADOR PARA QUANDO TIVER CARACTERE ESPECIAL
+        return f"\nA letra {letter} apareceu {counter(word=word,letter=letter)} vezes \n", True  # type: ignore #ARRUMAR O CONTADOR PARA QUANDO TIVER CARACTERE ESPECIAL
     else :
         return f"\nA letra {letter} não existe na palavra\n" , False  # type: ignore
+    
+def counter(word:str,letter: str)-> int:
+    cont:int=0
+    print('im here')
+    if letter in aux:
+        for l in word:
+            if l in aux[letter] :
+                for i in aux[letter]:
+                    if i == l:
+                        print(i,l)
+                        cont+=1
+    return cont if cont != 0 else word.count(letter)
 
 def check_especial(word:str,letter: str)-> bool:
     if letter in aux:
@@ -48,13 +60,13 @@ def check_especial(word:str,letter: str)-> bool:
 acentos = {
     'á':'a',
     'à':'a',
-    'â':'a',
+    'ã':'a',
     'â':'a',
     'é':'e',
     'ê':'e',
     'í':'i',
     'ó':'o',
-    'ô':'o',
+    'õ':'o',
     'ô':'o',
     'ú':'u',
     'ç':'c'
@@ -63,7 +75,7 @@ aux = {
     'a': ['a','á','à','â','ã'],
     'e':['e','é','ê'],
     'i':['i','í'],
-    'o':['o','ó','ô','ô'],
+    'o':['o','ó','õ','ô'],
     'u':['u','ú'],
     'c':['c','ç']
     }

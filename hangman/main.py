@@ -28,9 +28,7 @@ def main()-> None:
 |{"Favor inserir um numero válido dentro do limite especificado":^60}|""")
         main()
     else:
-        hangman(word = 'parâmetro' #w
-                ,erros=0,letters=[],comment='')
-    
+        hangman(word = w,erros=0,letters=[],comment='')
 
 def hangman(word:str, erros:int = 0 , letters:list[str] = [],comment:str='') -> None:
     secret:str
@@ -38,7 +36,7 @@ def hangman(word:str, erros:int = 0 , letters:list[str] = [],comment:str='') -> 
         result(word,True)
         clean_screen()        
     # Criar modo de imprimir a forca na tela sem repetir a tela 
-    chute:str = input(f'''\r
+    chute:str = valida_chute(f'''\r
 A palavra {word} 
 A palavra contém {len(word)} letras.
 Você ja errou {erros} vezes (máximo 5).
@@ -47,7 +45,8 @@ Letras já tentadas: {", ".join(letters)}
 Palavra a ser adivinhada:
 {secret}
 
-chute apenas uma letra por vez: ''').lower()[0]
+chute apenas uma letra por vez: ''')
+    print(f'Chute é esse-> {chute}')
     try:        #tratamento de erro para nao aceitar caracteres numéricos
         i:int = int(chute)
     except ValueError:
@@ -92,6 +91,13 @@ Deseja jogar de novo? S/N
         print(f'Obrigado por jogar comigo!!!')
         exit(0)
 
+def valida_chute(msg:str)-> str:
+    n:str=input(msg).lower()[0]
+    if n in ('\n','\t','\r','',' '):
+        return '1'
+    else:
+        return n
+    
 if __name__ == '__main__':
     clean_screen()
     main()
