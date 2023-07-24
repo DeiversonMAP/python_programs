@@ -1,0 +1,206 @@
+[
+    {
+        "label": "name",
+        "importPath": "os",
+        "description": "os",
+        "isExtraImport": true,
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "system",
+        "importPath": "os",
+        "description": "os",
+        "isExtraImport": true,
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "choice",
+        "importPath": "random",
+        "description": "random",
+        "isExtraImport": true,
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "A",
+        "importPath": "re",
+        "description": "re",
+        "isExtraImport": true,
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "U",
+        "importPath": "re",
+        "description": "re",
+        "isExtraImport": true,
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "exit",
+        "importPath": "sys",
+        "description": "sys",
+        "isExtraImport": true,
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "check",
+        "importPath": "utils.helper",
+        "description": "utils.helper",
+        "isExtraImport": true,
+        "detail": "utils.helper",
+        "documentation": {}
+    },
+    {
+        "label": "clean_screen",
+        "importPath": "utils.helper",
+        "description": "utils.helper",
+        "isExtraImport": true,
+        "detail": "utils.helper",
+        "documentation": {}
+    },
+    {
+        "label": "print_hang",
+        "importPath": "utils.helper",
+        "description": "utils.helper",
+        "isExtraImport": true,
+        "detail": "utils.helper",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "utils.words",
+        "description": "utils.words",
+        "isExtraImport": true,
+        "detail": "utils.words",
+        "documentation": {}
+    },
+    {
+        "label": "clean_screen",
+        "kind": 2,
+        "importPath": "utils.helper",
+        "description": "utils.helper",
+        "peekOfCode": "def clean_screen() -> None:\n    if name == 'nt':\n        system('cls')\n    else:\n        system('clear')\ndef print_hang(word:str,letters:List[str]) -> str:#NÃO EATÁ CONCATENANDO OS CARACTERES ESPECIAIS\n    # return ''.join([l if l in letters else '_' for l in word  ])\n    retorno : str=''\n    for l in word:\n        try:",
+        "detail": "utils.helper",
+        "documentation": {}
+    },
+    {
+        "label": "print_hang",
+        "kind": 2,
+        "importPath": "utils.helper",
+        "description": "utils.helper",
+        "peekOfCode": "def print_hang(word:str,letters:List[str]) -> str:#NÃO EATÁ CONCATENANDO OS CARACTERES ESPECIAIS\n    # return ''.join([l if l in letters else '_' for l in word  ])\n    retorno : str=''\n    for l in word:\n        try:\n            b:bool = acentos[l] in letters  \n        except KeyError:\n            b = False\n        if l in letters or b :\n            retorno += l",
+        "detail": "utils.helper",
+        "documentation": {}
+    },
+    {
+        "label": "check",
+        "kind": 2,
+        "importPath": "utils.helper",
+        "description": "utils.helper",
+        "peekOfCode": "def check(word:str,letter: str)-> str and bool:\n    if len(letter)== 0:\n        return '' ,True  # type: ignore\n    elif check_especial(word= word,letter=letter) or letter in word :\n        return f\"\\nA letra \\'{letter}\\' apareceu {counter(word=word,letter=letter)} vezes \\n\", True  # type: ignore #ARRUMAR O CONTADOR PARA QUANDO TIVER CARACTERE ESPECIAL\n    else :\n        return f\"\\nA letra \\'{letter}\\' não existe na palavra\\n\" , False  # type: ignore\ndef counter(word:str,letter: str)-> int:\n    cont:int=0\n    print('im here')",
+        "detail": "utils.helper",
+        "documentation": {}
+    },
+    {
+        "label": "counter",
+        "kind": 2,
+        "importPath": "utils.helper",
+        "description": "utils.helper",
+        "peekOfCode": "def counter(word:str,letter: str)-> int:\n    cont:int=0\n    print('im here')\n    if letter in aux:\n        for l in word:\n            if l in aux[letter] :\n                for i in aux[letter]:\n                    if i == l:\n                        print(i,l)\n                        cont+=1",
+        "detail": "utils.helper",
+        "documentation": {}
+    },
+    {
+        "label": "check_especial",
+        "kind": 2,
+        "importPath": "utils.helper",
+        "description": "utils.helper",
+        "peekOfCode": "def check_especial(word:str,letter: str)-> bool:\n    if letter in aux:\n        for l in word:\n            if l in aux[letter] :\n                print(l)\n                for i in aux[letter]:\n                    if i == l:\n                        return True\n    return False \nacentos = {",
+        "detail": "utils.helper",
+        "documentation": {}
+    },
+    {
+        "label": "acentos",
+        "kind": 5,
+        "importPath": "utils.helper",
+        "description": "utils.helper",
+        "peekOfCode": "acentos = {\n    'á':'a',\n    'à':'a',\n    'ã':'a',\n    'â':'a',\n    'é':'e',\n    'ê':'e',\n    'í':'i',\n    'ó':'o',\n    'õ':'o',",
+        "detail": "utils.helper",
+        "documentation": {}
+    },
+    {
+        "label": "aux",
+        "kind": 5,
+        "importPath": "utils.helper",
+        "description": "utils.helper",
+        "peekOfCode": "aux = {\n    'a': ['a','á','à','â','ã'],\n    'e':['e','é','ê'],\n    'i':['i','í'],\n    'o':['o','ó','õ','ô'],\n    'u':['u','ú'],\n    'c':['c','ç']\n    }",
+        "detail": "utils.helper",
+        "documentation": {}
+    },
+    {
+        "label": "word",
+        "kind": 2,
+        "importPath": "utils.words",
+        "description": "utils.words",
+        "peekOfCode": "def word(num:int)-> str:\n    return choice(list(filter(lambda x : len(x)== num and str.isalnum(x), words)))",
+        "detail": "utils.words",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def main() -> None:\n    # colocar um try aqui para levantar exceção pra caso seja inserido tipo errado\n    try:\n        dificuldade: int = int(input(f\"\"\"|{'='*60}|\n|{' Bem vindo(a) ao jogo da forca ':=^60}|\n|{'='*60}|\n|{'Digite um numero entre 3 a 15 para escolher':^60}|\n|{'o tamanho da palavra (3,4,...,13,14,15).':^60}|\n|{'Vale lembrar que você poderá errar a letra':^60}| \n|{'apenas 5 vezes, na sexta vez perderá o jogo.':^60}|",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "hangman",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def hangman(word: str, erros: int = 0, letters: list[str] = [], comment: str = '') -> None:\n    secret: str\n    if (secret := print_hang(word, letters)) == word:\n        result(word, True)\n        clean_screen()\n    # Criar modo de imprimir a forca na tela sem repetir a tela\n    chute: str = valida_chute(f'''\\r\nA palavra {word} \nA palavra contém {len(word)} letras.\nVocê ja errou {erros} vezes (máximo 5).",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "result",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def result(word: str, finished: bool = False) -> None:\n    clean_screen()\n    if not finished:\n        print(f\"\"\"\"\nInfelizmente você perdeu.\nA palavra é : {word.upper()}\n|{'='*60}|\"\"\")\n    else:\n        print(f\"\"\"|{'='*60}|\n|{' '+word+' ':=^60}|",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "valida_chute",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def valida_chute(msg: str) -> str:\n    n: str = input(msg).lower()[0]\n    if n in ('\\n', '\\t', '\\r', '', ' '):\n        return '1'\n    else:\n        return n\nif __name__ == '__main__':\n    clean_screen()\n    main()",
+        "detail": "main",
+        "documentation": {}
+    }
+]

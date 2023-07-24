@@ -30,9 +30,9 @@ def check(word:str,letter: str)-> str and bool:
     if len(letter)== 0:
         return '' ,True  # type: ignore
     elif check_especial(word= word,letter=letter) or letter in word :
-        return f"\nA letra {letter} apareceu {counter(word=word,letter=letter)} vezes \n", True  # type: ignore #ARRUMAR O CONTADOR PARA QUANDO TIVER CARACTERE ESPECIAL
+        return f"\nA letra \'{letter}\' apareceu {counter(word=word,letter=letter)} vezes \n", True  # type: ignore #ARRUMAR O CONTADOR PARA QUANDO TIVER CARACTERE ESPECIAL
     else :
-        return f"\nA letra {letter} não existe na palavra\n" , False  # type: ignore
+        return f"\nA letra \'{letter}\' não existe na palavra\n" , False  # type: ignore
     
 def counter(word:str,letter: str)-> int:
     cont:int=0
